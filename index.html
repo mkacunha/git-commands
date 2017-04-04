@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Curso de Git</title>
+
+  <style>
+  *{
+    margin: 0px;
+    padding: 0px;
+    font-family: "adelle", Georgia, "Times New Roman", serif;
+  }
+  body {
+    background-color: #F1F1E9;
+  }
+
+  main {
+    width: 1000px;
+    margin: 50px auto auto auto;
+  }
+
+  header{
+    background-color: #EAE9E1;
+    height: 100px;
+    padding-top: 50px;
+  }
+
+  .titulopagina{
+    text-align: center;
+  }
+
+  .titulopagina{
+    font-size: 1.5em;
+    color: #9A9994;
+  }
+
+  .logogit{
+    font-size: 2em;
+    color: #413932;
+  }
+
+  .subtitulopagina{
+    color: #413932;
+    font-size: 1.3em;
+  }
+
+  .comando {
+    color: #F54D27;
+    font-size: 0.9em;
+  }
+
+  .funcionalidade{
+    margin: 25px 0 0 5%;
+  }
+
+  .funcionalidade > p {
+    margin: 15px 0 15px 15px;
+    text-align: justify;
+  }
+
+  ul {
+    list-style-type: circle;
+
+  }
+  strong {
+    font-weight: normal;
+  }
+
+  .descricao-funcionalidade{
+      color: #413932;
+      font-weight: bolder;;
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="titulopagina"><span class="logogit">git</span>  -- principais funcionalidades</h1>
+  </header>
+
+  <main>
+    <h2 class="subtitulopagina">Gerando chave SSH</h2>
+
+    <ul>
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">ssh-keygen -t rsa -C "seu_email@provedor.com"</strong>
+
+        <p>Após rodar o comando será solicitado uma senha, caso queira deixar sem senha basta apertar enter sem informar nada.
+          Após isso será gerado uma chave pública e uma chave privada. No terminal aparece em qual repositório foi criado.
+          Agora é só editar o arquivo que contém a chave pública e configurar no repositório remoto em chaves públicas.</p>
+        </br>
+      </br>
+
+    </li>
+  </ul>
+
+  <h2 class="subtitulopagina">Funcionalidade e comandos</span></h2>
+
+  <ul>
+    <li class="funcionalidade">
+      <strong class="descricao-funcionalidade">Configurando nome do usuário do commit apenas do repositório atual</strong>
+      <p>
+        Ex: <strong class="comando">git config user.name "Meu Nome"</strong>.
+      </p>
+    </li>
+
+    <li class="funcionalidade">
+      <strong class="descricao-funcionalidade">Configurando nome do usuário do commit de todos repositórios git local</strong>
+      <p>
+        Ex: <strong class="comando">git config --global user.name "Meu Nome"</strong>.
+      </p>
+    </li>
+
+    <li class="funcionalidade">
+      <strong class="descricao-funcionalidade">Configurando o e-mail do usuário para commit apenas do repositório atual</strong>
+      <p>
+        Ex: <strong class="comando">git config user.email "meuemail@email.com"</strong>.
+      </p>
+    </li>
+
+    <li class="funcionalidade">
+      <strong class="descricao-funcionalidade">Configurando o e-mail do usuário para commit de todos repositórios git local</strong>
+      <p>
+        Ex: <strong class="comando">git config --global user.email "meuemail@email.com"</strong>.
+      </p>
+    </li>
+
+    <li class="funcionalidade">
+      <strong class="descricao-funcionalidade">Clonando um repositório</strong>
+      <p>Ex: <strong class="comando">git clone git://github.com/jcfonsecagit/repositorio.git</strong>. Este comando deverá ser executando dentro do repositório onde o
+        projeto deve ficar.
+      </p>
+    </li>
+
+    <li class="funcionalidade">
+      <strong class="descricao-funcionalidade">Visualizando versões de um projeto</strong>
+      <p>Ex: <strong class="comando">git tag</strong>. O comando deve ser executado dentro do repositório git local</p>
+    </li>
+
+    <li class="funcionalidade">
+      <strong class="descricao-funcionalidade">Voltando o projeto para um versão anterior (v001)</strong>
+      <p>Ex: <strong class="comando">git checkout v001</strong>.</p>
+    </li>
+
+    <li class="funcionalidade">
+      <strong class="descricao-funcionalidade">Visualizando alterações de um arquivo</strong>
+      <p>Ex: <strong class="comando">git blame index.html</strong>. Esta funcionalidade permite consultar quem foi o autor de cada linha de um arquivo
+        determinado arquivo.</p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Inicializando um repositório local para ser controlado pelo git</strong>
+        <p>Ex: <strong class="comando">git init</strong>. Bastar através do terminal entrar dentro da pasta que deseja controlar e executar o comando.</p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Verificar quais arquivos dentro do repositório já estão sendo controlados</strong>
+        <p>Ex: <strong clas=:"comando">git ls-files</strong>. Não é necessário o arquivo estar comitado para aparecer, se estiver apenas no index já aparece listado
+          quando executado este comando.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Verificando o status do repositório</strong>
+        <p>Ex: <strong class="comando">git status</strong>. Este comando mostra os arquivos que foram criado e ainda
+          estão no Working Directory e os arquivos que estão no Index, prontos para serem comitados.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Preparando um arquivo para executar commit</strong>
+        <p>Ex: <strong class="comando">git add index.html</strong>. Este comando permite preparar um arquivo para ser comitado.
+          Quando executado o arquivo passa do Working Directory para o Index, após isso é necessário apenas executar o commit.
+          Para executar este comando pode ser passado como parâmetro um arquivo (index.html), um diretório (meuprojeto/paginasweb/) ou comitar tudo
+          sem passar nada por parâmetro, para isso deve ser executado da seguinte maneira <strong class="comando"> git add .</strong> .
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Executando commit</strong>.
+        <p>
+          Ex: <strong class="comando">git commit -m "Primeirto commit"</strong>. Para executar o commit, primeiro é necessário adicionar os
+          arquivos a serem comitados no index, para isso basta executar o comando anterior. O -m serve para passar por parâmetro uma mensagem
+          de commit, caso não informado, será aberto automaticamene o editor de arquivos default do terminal para que seja informada a mensagem
+          de commit.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Compartilhando um repositório git local em um repositório git remoto</strong>
+        <p>
+          Ex: <strong class="comando">git remote add [alias_do_repositorio_remoto] [uri_do_repositorio]</strong>. Uma convensão adotada é a utilização do alias do repositório remoto como "origin".
+          No entanto, qualquer nome pode ser utilizado.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Enviando commit para repositório remoto</strong>
+        <p>
+          Ex: <strong class="comando">git push origin master</strong>. Origin é o alias do repositório remoto, e master é o nome da branch que estamos enviando arquivos ou alterações. Qualquer
+          branch existente localmente pode ser enviada para o repositório remoto, basta especificar qual. Porém, toda vez que atualizarmos o nosso projeto local, precisaremos indicar qual o
+          repositório e o nome da branch que a nossa branch local se refere no remoto, isto é, precisaremos digitar <strong class="comando">git push [alias_repositorio_remoto] [alias_da_branch_remota]</strong>.
+          Para não precisar-mos fazer isso e digitar apenas o comando <strong class="comando">git push</strong> para atualizar a branch corrente, basta executar o comando
+          <strong class="comando">git push -u [alias_repositorio_remoto] [alias_da_branch_remota]</strong>. Com isso, a nossa branch local sabe qual a branch remota que ela se referencia.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Recebendo alterações do repositório remoto para o local</strong>
+        <p>
+          Ex: <strong class="comando">git pull origin master</strong>. Origin é o alias do repositório remoto, e master é o nome da branch que estamos recebendo arquivos ou alterações. Qualquer uma
+          branch existente remotamente pode ser baixada para um repositório local, basta especificar o nome. Porém, toda vez que atualizarmos o nosso projeto local, precisaremos indicar qual o
+          repositório e o nome da branch que a nossa branch local se refere no remoto, isto é, precisaremos digitar <strong class="comando">git pull [alias_repositorio_remoto] [alias_da_branch_remota]</strong>.
+          Para não precisar-mos fazer isso e digitar apenas o comando <strong class="comando">git pull</strong> para atualizar a branch corrente, basta executar o comando
+          <strong class="comando">git pull -u [alias_repositorio_remoto] [alias_da_branch_remota]</strong>. Com isso, a nossa branch local sabe qual a branch remota que ela se referencia.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Fazendo download das alterações no repositório remoto</strong>
+        <p>
+          Ex: <strong class="comando">git fetch [alias_repositorio_remoto]</strong>. Este comando faz o download das alterações mas não faz merge automático, apenas o pull realiza merge automático.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Visualizando logs de commit</strong>
+        <p>
+          Ex: <strong class="comando">git log</strong>. Esse comando mostrará informações como o autor, a data e hora e a mensagem de commit utilizada.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Visualizando logs de commit e linhas modificadas</strong>
+        <p>
+          Ex: <strong class="comando">git whatchanged -r</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Criando uma nova branch</strong>
+        <p>
+          Ex: <strong class="comando">git branch [alias_para_branch]</strong>. Podemos criar uma outra branch para podermos fazer alterações e testes em um branch diferente da principal, sendo
+          assim uma boa prática.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Criando uma nova branch e em seguida passa para branch criada automaticamente</strong>
+        <p>
+          Ex: <strong class="comando">git checkou -b [alias_para_branch]</strong>. Com este comando não é preciso trocar para a nova branch, pois ele cria e troca automático.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Deletando uma branch</strong>
+        <p>
+          Ex: <strong class="comando">git branch -d [alias_da_branch]</strong>. Não é possível remover a branch se ela for a atual, antes de remover tem que alterar a branch atual para outra
+          através do comando <strong class="comando">git checkou</strong>. Também não é possível remover uma branch que existe comite e não foi realizado o merge.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Deletando uma branch remota</strong>
+        <p>
+          Ex: <strong class="comando">git push [alias_repositorio_remoto] :[alias_da_branch]</strong>. Ao executar este comando a branch remota é deletada.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Visualizando todas as branch que existe no projeto</strong>
+        <p>
+          Ex: <strong class="comando">git branch</strong>. Este comando retorna uma lista com todas as branchs que existem no projeto. Quando antes do nome da branch aparecer um "*", significa
+          que esta é a branch atual, ou seja, se realizarmos alguma alteração de arquivo, é nesta branch que será aplicadas as alterações.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Alterando a branch de trabalho</strong>
+        <p>
+          Ex: <strong class="comando">git checkout [alias_da_branch_desejada]</strong>.
+        </p>
+      </li>
+
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Listando branches que existem no repositório remoto</strong>
+        <p>
+          Ex: <strong class="comando">git branch -r</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Listando branches locais e remotas</strong>
+        <p>
+          Ex: <strong class="comando">git branch -a</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Copiando uma branch remota para repositório local</strong>
+        <p>
+          Ex: <strong class="comando">git branch -t [alias_branch_a_ser_criada_local] [alias_repositorio_remoto]/[alias_branch_remota]</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Atualizando uma branch local com os commits existentes na branch principal MASTER (REBASE)</strong>
+        <p>
+          Ex: <strong class="comando">git rebase [alias_branch_base]</strong>. Para executar este comando, deve estar seleiconado como branch atual a branch que deverá receber os commits. Por exemplo,
+          atualizei a branch MASTER com commits que estavão no repositório remoto, e agora quero atualizar a branch local DESENVOLVIMENTO com os commits que veio do repositório remoto para a MASTER.
+          Primeito peciso verificar se estou na DESENVOLVIMENTO com o comando <strong class="comando">git branch</strong>, caso não esteja utiliza o comando <strong class="comando">git checkou DESENVOLVIMENTO</strong>,
+          e em seguida executa o comando <strong class="comando">git rebase MASTER</strong>. Nesse instante, os commits feitos em DESENVOLVIMENTO são movidos para uma branch temporária e o git atualiza com os commits da MASTER.
+          Após essa atualização, o próprio Git traz de volta os commits que realizamos e os aplica sobre a DESENVOLVIMENTO, um de cada vez. Caso existir conflito temos três opções: podemos alular o rebase através
+          comando <strong class="comando">git rebase --abort</strong>, ou descartar o seu commit que gerou conflito através do comando <strong class="comando">git rebase --skip</strong>, ou ainda
+          resolver o confilto manualmente direto no arquivo, pois quando ocorre conflitos que o git não consegue fazer merge automaticamente durante um rebase, o git coloca os arquivos em uma branch temporária
+          temporária, nesta branch pode-se utilizar do comando <strong class="comando">git status</strong> para descobrir quais arquivos ocorreram os conflitos e utilizar o comando <strong class="comando">git add [nome_arquivo]</strong>
+          para adicionar o arquivos ao index e continuar com processo de rebase através do comando <strong class="comando">git rebase continue</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Atualizando branch MASTER com commits existente em uma branch local de desenvolvimento (MERGE)</strong>
+        <p>
+          Ex: <strong class="comando">git merge [alias_branch_base]</strong>. Para executar este comando, deve estar seleiconado como branch atual a branch principal, a MASTER. Por exemplo,
+          vou levar os commits existentes na branch DESENVOLVIMENTO para a branch MASTER. Primeito peciso verificar se estou na MASTER com o comando <strong class="comando">git branch</strong>, caso não esteja utiliza o comando <strong class="comando">git checkou MASTER</strong>,
+          e em seguida executa o comando <strong class="comando">git merge DESENVOLVIMENTO</strong>. Nesse instante, tem-se todos os novos commits na branch MASTER, prontos para serem enviados para o repositório remoto através do comando <strong class="comando">git push</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Descartando alterações de um arvuivo que está no "Working Directory"</strong>
+        <p>
+          Ex: <strong class="comando">git checkout [nome_do_arquivo]</strong>. Com este comando é possível descartar todas as alterações realizadas desde do último commit, ou seja,
+          voltar para o estado em que se encontra no HEAD.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Descartando alterações de um arvuivo que está no "Working Directory" utilizando uma versão que está em uma branch diferente da atual</strong>
+        <p>
+          Ex: <strong class="comando">git checkout [alias_branch] [nome_do_arquivo]</strong>. COm este comando é possível realizar a mesma ação do comando anterior mas voltando para uma versão
+          do arquivo que está em uma branch diferente da atual.
+        </p>
+      </li>
+
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Descartando alterações do INDEX</strong>
+        <p>
+          Ex: <strong class="comando">git reset HEAD [nome_do_arquivo]</strong>. Com este comando um arquivo que já foi adicionado no INDEX volta para o estado Working Directory, podendo ser
+          descartado através do comando <strong class="comando">git checkout [nome_do_arquivo]</strong>.
+        </p>
+      </li>
+
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Salvando alterações do Working Directory em uma stach para voltar na versão do HEAD</strong>
+        <p>
+          Ex: <strong class="comando">git stach</strong>. Ao executar este comando todas as alterações do Working Dorectory e Index são salvas em uma área distinta e o repositório é restaurado de acordo
+          com o HEAD. Após isso pode realizar novas alterações e realizar commits normalmente.
+        </p>
+      </li>
+
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Recuperando alterações salvas em um stach</strong>
+        <p>
+          Ex: <strong class="comando">git stach pop</strong>. Com este comando as alterações salvas no stach voltam para o Working Dorectory, mas apenas as alterações contidas  no último stach salvo.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Verificando se existe alguma alteração salva no stach</strong>
+        <p>
+          Ex: <strong class="comando">git stach list</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Recuperando um stach específico</strong>
+        <p>
+          Ex: <strong class="comando">git stash pop stash@{[numero_do_stash_especifico]}</strong>. A executar o comando para listar as stashs existentes, o git retorna uma lista contendo o número da stash
+          entre {}, para voltar para uma stash especifica basta executar o comando específicando qual deverá voltar para o Working Directory.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Deletando um stach</strong>
+        <p>
+          Ex: <strong class="comando">git stash drop</strong>. Com este comando o último stash realizado será descartado.  Também podemos utilizar o nome do stash como argumento para remover um stash específavico
+          que não seja o último.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Removendo todos os stash existentes</strong>
+        <p>
+          Ex: <strong class="comando">git stash clear</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Descartando commits indesejados para um outro commit específico</strong>
+        <p>
+          Ex: <strong class="comando">git reset [hash_do_commit_especifico]</strong>. Com esse comando conseguimos voltar um arquivo para uma commit anterior, mas todos os commits que aconteceram no intervalo serão
+          descartados. Podemos descobrir qual o hash do commit através do comando <strong class="comando">git log.</strong>
+        </p>
+      </li>
+
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Revertendo apenas uma commit específico sem descartar os commits posteriores</strong>
+        <p>
+          Ex: <strong class="comando">git revert [hash_commit]</strong>. Ao digitar o comando, um novo commit revertendo as alterações do commit escolhido será realizado e o editor de texto padrão se abrirá
+          para que se possa digitar a mensagem do commit. Para que o comando seja utilizado, é necessário que o Working Directory e o Index estejam "limpos", ou as alterações atuais serão descartadas.
+          Uma boa alternativa para maior flexibilidade é a opção "-n", para que as alterações sejam revertidas e adicionadas ao nosso Working Directory e Index. Assim podemos fazer alterações adicionais
+          antes de criar um novo commit de reversão, exemplo <strong class="comando">git revert -n [hash_do_commit]</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Aplicando alterações de um repositório remoto em outro repositório remoto</strong>
+        <p>
+          Ex: <strong class="comando">git merge [alias_repositorio_remoto]/[alias_branch_base]</strong>.
+        </p>
+      </li>
+
+      <li class="funcionalidade">
+        <strong class="descricao-funcionalidade">Trazendo um commit específico de uma outra branch para a master</strong>
+        <p>
+          Ex: <strong class="comando">git cherry-pick [hash_do_commit]</strong>.
+        </p>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
