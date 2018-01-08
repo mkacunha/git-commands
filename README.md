@@ -90,7 +90,7 @@ Após rodar o comando será solicitado uma senha, caso queira deixar sem senha b
 
 #### Criando uma nova branch e em seguida passa para branch criada automaticamente
 
-`git checkou -b [alias_para_branch]` Cria uma branch e troca automaticamente para a branch criada
+`git checkout -b [alias_para_branch]` Cria uma branch e troca automaticamente para a branch criada
 
 #### Deletando uma branch
 
